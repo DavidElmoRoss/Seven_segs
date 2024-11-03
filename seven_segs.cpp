@@ -17,7 +17,7 @@ Description:   We will be using the the DigitDisplay public member functions:
 #include "DigitDisplay.h"           // include the DigitDisplay Library
 
 // Hardware definitions
-DigitDisplay segment(D2,D3);          // 4 digit display connected to D16
+DigitDisplay segment(D2,D3);          // 4 digit display connected to D2
 
 // Global variables
 unsigned char mess[]= {0x00,0x00,0x00,0x00,           // segs are off
@@ -33,7 +33,7 @@ int main(void)
     segment.setBrightness(4);       // set display brightness to med
     for(counter=9999;counter>0;counter--)
     {
-        segment.write(counter);     // write value 1234
+        segment.write(counter);     // write counter value to 4 digit
         wait_ms(1);                 // wait 1 ms
     }
     segment.write(counter);         // treat 0 as special case otherwise
